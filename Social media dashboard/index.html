@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Dashboard</title>
+<style>
+    /* Add your CSS styles here */
+</style>
+</head>
+<body>
+<div id="dashboard">
+    <h1>Social Media Dashboard</h1>
+    <div id="twitter-feed">
+        <h2>Twitter Feed</h2>
+        <ul id="twitter-posts"></ul>
+    </div>
+    <div id="facebook-feed">
+        <h2>Facebook Feed</h2>
+        <ul id="facebook-posts"></ul>
+    </div>
+    <div id="instagram-feed">
+        <h2>Instagram Feed</h2>
+        <ul id="instagram-posts"></ul>
+    </div>
+</div>
+
+<script>
+    // Use JavaScript to fetch and display social media posts
+    // This is where you would make API calls and update the HTML with real data
+    // For simplicity, we'll use mock data
+
+    // Mock Twitter data
+    const twitterPosts = [
+        { text: "Hello from Twitter!", date: "2024-04-05" },
+        { text: "This is another tweet.", date: "2024-04-04" }
+    ];
+
+    // Mock Facebook data
+    const facebookPosts = [
+        { text: "Greetings from Facebook!", date: "2024-04-03" },
+        { text: "Another post on Facebook.", date: "2024-04-02" }
+    ];
+
+    // Mock Instagram data
+    const instagramPosts = [
+        { imageUrl: "https://via.placeholder.com/150", date: "2024-04-01" },
+        { imageUrl: "https://via.placeholder.com/150", date: "2024-03-31" }
+    ];
+
+    // Update the HTML with the mock data
+    const twitterPostsElement = document.getElementById("twitter-posts");
+    twitterPosts.forEach(post => {
+        const li = document.createElement("li");
+        li.textContent = `${post.text} - ${post.date}`;
+        twitterPostsElement.appendChild(li);
+    });
+
+    const facebookPostsElement = document.getElementById("facebook-posts");
+    facebookPosts.forEach(post => {
+        const li = document.createElement("li");
+        li.textContent = `${post.text} - ${post.date}`;
+        facebookPostsElement.appendChild(li);
+    });
+
+    const instagramPostsElement = document.getElementById("instagram-posts");
+    instagramPosts.forEach(post => {
+        const li = document.createElement("li");
+        const img = document.createElement("img");
+        img.src = post.imageUrl;
+        img.alt = "Instagram Image";
+        li.appendChild(img);
+        li.textContent = `${post.date}`;
+        instagramPostsElement.appendChild(li);
+    });
+</script>
+</body>
+</html>
